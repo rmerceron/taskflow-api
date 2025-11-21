@@ -2,23 +2,23 @@
 
 A cloud-native task management API built with NestJS, PostgreSQL, and TypeORM. This project is designed for deployment on Google Cloud Platform using modern DevOps practices.
 
-## 🚀 Features
+## Features
 
-- ✅ Full CRUD operations for task management
-- 📝 Comprehensive Swagger API documentation
-- 🗄️ PostgreSQL database with TypeORM
-- ✨ Input validation with class-validator
-- 🧪 Unit tests with Jest
-- 🔒 Environment-based configuration
-- 🐳 Docker support
+- Full CRUD operations for task management
+- Comprehensive Swagger API documentation
+- PostgreSQL database with TypeORM
+- Input validation with class-validator
+- Unit tests with Jest
+- Environment-based configuration
+- Docker support
 
-## 📋 Prerequisites
+## Prerequisites
 
 - Node.js (v18 or higher)
 - PostgreSQL (v14 or higher)
 - npm or yarn
 
-## 🛠️ Installation
+## Installation
 
 1. Clone the repository:
 ```bash
@@ -44,7 +44,7 @@ cp .env.example .env
 CREATE DATABASE taskflow_db;
 ```
 
-## 🏃 Running the Application
+## Running the Application
 
 ### Development mode
 ```bash
@@ -61,7 +61,7 @@ npm run build
 npm run start:prod
 ```
 
-## 🧪 Testing
+## Testing
 
 Run unit tests:
 ```bash
@@ -78,7 +78,7 @@ Run tests in watch mode:
 npm run test:watch
 ```
 
-## 📚 API Documentation
+## API Documentation
 
 Once the application is running, visit http://localhost:3000 to access the interactive Swagger documentation.
 
@@ -105,7 +105,7 @@ curl -X POST http://localhost:3000/tasks \
   }'
 ```
 
-## 🗂️ Project Structure
+## Project Structure
 
 ```
 taskflow-api/
@@ -129,7 +129,7 @@ taskflow-api/
 └── README.md
 ```
 
-## 🗄️ Database Schema
+## Database Schema
 
 ### Task Entity
 
@@ -144,7 +144,7 @@ taskflow-api/
 | createdAt | Timestamp | Creation date |
 | updatedAt | Timestamp | Last update date |
 
-## 🔧 Configuration
+## Configuration
 
 The application uses environment variables for configuration. See `.env.example` for all available options:
 
@@ -156,7 +156,7 @@ The application uses environment variables for configuration. See `.env.example`
 - `PORT`: Application port (default: 3000)
 - `NODE_ENV`: Environment (development/production)
 
-## 📦 Dependencies
+## Dependencies
 
 ### Core Dependencies
 - `@nestjs/common` - NestJS core functionality
@@ -172,7 +172,7 @@ The application uses environment variables for configuration. See `.env.example`
 - `jest` - Testing framework
 - `typescript` - TypeScript compiler
 
-## 🚀 Next Steps (Cloud Deployment)
+## Next Steps (Cloud Deployment)
 
 This project is designed to be deployed on Google Cloud Platform with:
 - CI/CD pipeline using GitHub Actions
@@ -181,14 +181,9 @@ This project is designed to be deployed on Google Cloud Platform with:
 - Cloud SQL for PostgreSQL
 - Infrastructure as Code with Terraform
 
-## 👥 Team
+## Team
 
-This project is developed by a team of 4 as part of the "Cloud Development and Services" module.
-
-## 📝 License
-
-This project is part of an educational module and is not licensed for commercial use.
-
-## 📧 Contact
-
-For questions or issues, please contact the project maintainer at: pro.bryanbreton@gmail.com
+This project is developed by a team of 3 as part of the "Cloud Development and Services" module:
+- **OGER Jérôme**
+- **MERCERON Romain**
+- **ROULAND CURRIT Thibault**
