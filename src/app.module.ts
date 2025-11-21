@@ -20,6 +20,9 @@ import { TasksModule } from './tasks/tasks.module';
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true, // Disable in production!
       logging: process.env.NODE_ENV === 'development',
+      ssl: process.env.DB_HOST !== 'localhost' ? {
+        rejectUnauthorized: false, // For Cloud SQL
+      } : false,
     }),
     TasksModule,
   ],
