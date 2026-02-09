@@ -1,4 +1,10 @@
-import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  CreateDateColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 import { ApiProperty } from '@nestjs/swagger';
 
 @Entity('tasks')
@@ -19,7 +25,11 @@ export class Task {
   @Column({ default: false })
   isCompleted: boolean;
 
-  @ApiProperty({ description: 'The priority level of the task', enum: ['low', 'medium', 'high'], default: 'medium' })
+  @ApiProperty({
+    description: 'The priority level of the task',
+    enum: ['low', 'medium', 'high'],
+    default: 'medium',
+  })
   @Column({ default: 'medium' })
   priority: string;
 
