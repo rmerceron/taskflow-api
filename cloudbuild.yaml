@@ -5,7 +5,7 @@ steps:
       [
         'build',
         '-t',
-        '$_REGION-docker.pkg.dev/taskflow-api-486912/$_REPO_NAME/taskflow-api:latest',
+        '$_REGION-docker.pkg.dev/taskflow-api-486912/$_REPO_NAME/taskflow-api:$COMMIT_SHA',
         '.',
       ]
 
@@ -14,11 +14,11 @@ steps:
     args:
       [
         'push',
-        '$_REGION-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/taskflow-api:latest',
+        '$_REGION-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/taskflow-api:$COMMIT_SHA',
       ]
 
 images:
-  - '$_REGION-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/taskflow-api:latest'
+  - '$_REGION-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/taskflow-api:$COMMIT_SHA'
 
 substitutions:
   _REGION: 'europe-west1' # À modifier selon ta région
