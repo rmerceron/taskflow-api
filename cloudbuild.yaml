@@ -1,0 +1,25 @@
+steps:
+  # 1. Construction de l'image Docker
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      [
+        'build',
+        '-t',
+        '$_REGION-docker.pkg.dev/taskflow-api-486912/$_REPO_NAME/taskflow-api:latest',
+        '.',
+      ]
+
+  # 2. Envoi de l'image vers Artifact Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      [
+        'push',
+        '$_REGION-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/taskflow-api:latest',
+      ]
+
+images:
+  - '$_REGION-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/taskflow-api:latest'
+
+substitutions:
+  _REGION: 'europe-west1' # À modifier selon ta région
+  _REPO_NAME: 'taskflow-api' # À modifier selon ton dépôt Artifact Registry
