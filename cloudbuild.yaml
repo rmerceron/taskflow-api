@@ -5,7 +5,7 @@ steps:
       [
         'build',
         '-t',
-        '$_REGION-docker.pkg.dev/taskflow-api-486912/$_REPO_NAME/taskflow-api:$COMMIT_SHA',
+        '$_REGION-docker.pkg.dev/taskflow-api-486912/$_REPO_NAME/taskflow-api:$SHORT_SHA',
         '.',
       ]
 
@@ -14,7 +14,7 @@ steps:
     args:
       [
         'push',
-        '$_REGION-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/taskflow-api:$COMMIT_SHA',
+        '$_REGION-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/taskflow-api:$SHORT_SHA',
       ]
 
   # 3. Déploiement sur Cloud Run
@@ -25,7 +25,7 @@ steps:
       - 'deploy'
       - 'taskflow-api-service' # Nom de votre service Cloud Run
       - '--image'
-      - '$_REGION-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/taskflow-api:$COMMIT_SHA'
+      - '$_REGION-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/taskflow-api:$SHORT_SHA'
       - '--region'
       - '$_REGION'
       - '--platform'
@@ -33,7 +33,7 @@ steps:
       - '--allow-unauthenticated' # Pour que l'API soit publique
 
 images:
-  - '$_REGION-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/taskflow-api:$COMMIT_SHA'
+  - '$_REGION-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/taskflow-api:$SHORT_SHA'
 
 substitutions:
   _REGION: 'europe-west1' # À modifier selon ta région
