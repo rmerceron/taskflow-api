@@ -23,3 +23,7 @@ images:
 substitutions:
   _REGION: 'europe-west1' # À modifier selon ta région
   _REPO_NAME: 'taskflow-api' # À modifier selon ton dépôt Artifact Registry
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+  dynamic_substitutions: true
