@@ -17,6 +17,21 @@ steps:
         '$_REGION-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/taskflow-api:$COMMIT_SHA',
       ]
 
+  # 3. Déploiement sur Cloud Run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+      - 'run'
+      - 'deploy'
+      - 'taskflow-api-service' # Nom de votre service Cloud Run
+      - '--image'
+      - '$_REGION-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/taskflow-api:$COMMIT_SHA'
+      - '--region'
+      - '$_REGION'
+      - '--platform'
+      - 'managed'
+      - '--allow-unauthenticated' # Pour que l'API soit publique
+
 images:
   - '$_REGION-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/taskflow-api:$COMMIT_SHA'
 
