@@ -14,9 +14,4 @@ export class AppController {
   getHealth(): { status: string } {
     return { status: 'ok' };
   }
-
-  @Get('error')
-  getError(): void {
-    console.log('ERROR');
-  }
 }
