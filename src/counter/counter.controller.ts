@@ -11,7 +11,7 @@ export class CounterController {
     return { count: this.counterService.getCount() };
   }
 
-  @Post('incrementCounter')
+  @Post('augmenterCounter')
   incrementCounter() {
     return { count: this.counterService.increment() };
   }

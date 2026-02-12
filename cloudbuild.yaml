@@ -23,22 +23,21 @@ steps:
     args:
       - 'run'
       - 'deploy'
-      - 'taskflow-api-service' # Nom de votre service Cloud Run
+      - 'taskflow-api-service'
       - '--image'
       - '$_REGION-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/taskflow-api:$SHORT_SHA'
       - '--region'
       - '$_REGION'
       - '--platform'
       - 'managed'
-      - '--allow-unauthenticated' # Pour que l'API soit publique
+      - '--allow-unauthenticated'
 
 images:
   - '$_REGION-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/taskflow-api:$SHORT_SHA'
 
 substitutions:
-  _REGION: 'europe-west1' # À modifier selon ta région
-  _REPO_NAME: 'taskflow-api' # À modifier selon ton dépôt Artifact Registry
-
+  _REGION: 'europe-west1'
+  _REPO_NAME: 'taskflow-api'
 options:
   logging: CLOUD_LOGGING_ONLY
   dynamic_substitutions: true
