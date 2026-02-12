@@ -2,16 +2,21 @@ import { Controller, Get, Post, Body } from '@nestjs/common';
 import { CounterService } from './counter.service';
 import { UpdateCounterDto } from './counter.dto';
 
-@Controller('counter')
+@Controller()
 export class CounterController {
   constructor(private readonly counterService: CounterService) {}
 
-  @Get()
-  getIncrement() {
+  @Get('getCounter')
+  getCounter() {
+    return { count: this.counterService.getCount() };
+  }
+
+  @Post('incrementCounter')
+  incrementCounter() {
     return { count: this.counterService.increment() };
   }
 
-  @Post()
+  @Post('updateCounter')
   updateCount(@Body() updateCounterDto: UpdateCounterDto) {
     this.counterService.setCount(updateCounterDto.value);
     return {

@@ -4,10 +4,13 @@ import { Injectable } from '@nestjs/common';
 export class CounterService {
   private count = 0;
 
+  getCount(): number {
+    return this.count;
+  }
+
   increment(): number {
-    const currentValue = this.count;
     this.count++;
-    return currentValue;
+    return this.count;
   }
 
   setCount(value: number): void {
